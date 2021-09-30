@@ -1,26 +1,18 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useSelector } from "react-redux";
+import { RootState } from "./app/store";
+import HomePage from "./components/HomePage/HomePage";
+import Loading from "./components/Loading/Loading";
+import PlayPage from "./components/PlayPage/PlayPage";
+
 
 function App() {
+  const isStarted = useSelector((state:RootState)=>state.start.isStarted)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <Loading />
+      {!isStarted ?  <HomePage /> : <PlayPage />}
     </div>
-  );
+  )
 }
 
 export default App;
