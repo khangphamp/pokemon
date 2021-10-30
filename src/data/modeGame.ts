@@ -3,7 +3,7 @@ export const ModeGame = [
         level:1,
         mode:3,
         score:10,
-        time:20,
+        time:20
     },
     {
         level:2,

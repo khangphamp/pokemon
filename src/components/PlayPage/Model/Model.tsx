@@ -42,7 +42,7 @@ function Model({setModelWin, setmodelFailed, type}:ModelProps) {
             <div className="model-warp">
             <div className="model">
                 <p className="model-title">You are Failed at mode {level}</p>
-                <p className="model-title">Do you play again mode 1?</p>
+                <p className="model-title">Do you play again ?</p>
                 <button onClick={handleYes} disabled={disabled} className="btn btn-model">
                     <span></span>
                     <span></span>

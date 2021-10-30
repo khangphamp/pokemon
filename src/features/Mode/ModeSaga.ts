@@ -3,6 +3,7 @@ import { put } from "redux-saga/effects";
 import { setAllCardDelete } from "../Card/Card";
 import { CloseLoading, OpenLoading } from "../Loading/Loanding";
 import { newMode, playAgain } from "./Mode";
+import { ended } from "../startGame/startGame";
 
 function * handleMode (){
     yield put(newMode());
@@ -12,6 +13,7 @@ function * handleMode (){
     
 }
 function * handleAgain(){
+    yield put(ended());
     yield put(playAgain());
     yield put(setAllCardDelete())
 }
